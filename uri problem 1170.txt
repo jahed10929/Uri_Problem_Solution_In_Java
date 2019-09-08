@@ -1,0 +1,17 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        while(n>0){
+            float m = in.nextFloat();
+            int day=0;
+            while(m>1){
+                m/=2;
+                day++;
+            }
+            System.out.println(day+" dias");
+            n--;
+        }
+    }
+}

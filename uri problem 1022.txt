@@ -1,0 +1,103 @@
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        
+        
+        int cas = in.nextInt();
+        for(int i = 0; i<cas; i++){
+            int x,ans1, ans2, up_div, lw_div, N1, N2, D1, D2;
+            char c1, sin;
+            N1 = in.nextInt();
+            c1 = in.next().charAt(0);
+            D1 = in.nextInt();
+            sin = in.next().charAt(0);
+            N2 = in.nextInt();
+            c1 = in.next().charAt(0);
+            D2 = in.nextInt();
+            switch(sin){
+                case '+':
+                    up_div=(N1*D2 + N2*D1);
+                    lw_div =(D1*D2);
+                    System.out.print(up_div+"/"+lw_div);
+                    System.out.print(" = ");
+                    if(up_div<lw_div) x = up_div;
+                    else x = lw_div;
+                    if(x<0) x*=(-1);
+                    ans1=up_div;
+                    ans2=lw_div;
+                    for(int j= x; j>=2; j--){
+                        if(up_div%j==0&&lw_div%j==0){
+                            ans1=up_div/j;
+                            ans2=lw_div/j;
+                            break;
+                        }
+                    }
+                    if(ans1==up_div&&ans2==lw_div) System.out.println(up_div+"/"+lw_div);
+                    else System.out.println(ans1+"/"+ans2);
+                    break;
+                case '-':
+                    up_div=(N1*D2 - N2*D1) ;
+                    lw_div =(D1*D2);
+                    System.out.print(up_div+"/"+lw_div);
+                    System.out.print(" = ");
+                    if(up_div<lw_div) x = up_div;
+                    else x = lw_div;
+                    if(x<0) x*=(-1);
+                    ans1=up_div;
+                    ans2=lw_div;
+                    for(int j= x; j>=2; j--){
+                        if(up_div%j==0&&lw_div%j==0){
+                            ans1=up_div/j;
+                            ans2=lw_div/j;
+                            break;
+                        } 
+                    }
+                    if(ans1==up_div&&ans2==lw_div) System.out.println(up_div+"/"+lw_div);
+                    else System.out.println(ans1+"/"+ans2);
+                    break;
+                case '*':
+                    up_div=(N1*N2)  ;
+                    lw_div=(D1*D2);
+                    System.out.print(up_div+"/"+lw_div);
+                    System.out.print(" = ");
+                    if(up_div<lw_div) x = up_div;
+                    else x = lw_div;
+                    if(x<0) x*=(-1);
+                    ans1=up_div;
+                    ans2=lw_div;
+                    for(int j= x; j>=2; j--){
+                        if(up_div%j==0&&lw_div%j==0){
+                            ans1=up_div/j;
+                            ans2=lw_div/j;
+                            break;
+                        }
+                    }
+                    if(ans1==up_div&&ans2==lw_div) System.out.println(up_div+"/"+lw_div);
+                    else System.out.println(ans1+"/"+ans2);
+                    break;
+                case '/':
+                    up_div=(N1*D2);
+                    lw_div=(N2*D1);
+                    System.out.print(up_div+"/"+lw_div);
+                    System.out.print(" = ");
+                    if(up_div<lw_div) x = up_div;
+                    else x = lw_div;
+                    if(x<0) x*=(-1);
+                    ans1=up_div;
+                    ans2=lw_div;
+                    for(int j= x; j>=2; j--){
+                        if(up_div%j==0&&lw_div%j==0){
+                            ans1=up_div/j;
+                            ans2=lw_div/j;
+                            break;
+                        }
+                    }
+                    if(ans1==up_div&&ans2==lw_div) System.out.println(up_div+"/"+lw_div);
+                    else System.out.println(ans1+"/"+ans2);
+                    break;
+            }
+        }
+    }
+}
